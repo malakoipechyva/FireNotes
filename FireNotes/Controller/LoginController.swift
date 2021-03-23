@@ -38,6 +38,6 @@ class LoginController: UIViewController {
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .cyan
+        view.backgroundColor = .systemGray
     }
 }
