@@ -12,15 +12,38 @@ class LoginController: UIViewController {
     //MARK: - Properties
     
     private lazy var emailContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
+        let image = #imageLiteral(resourceName: "envelope")
+        let view = Utilities().inputContainerView(withImage: image, textField: emailTextField)
         return view
     }()
     
     private lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
+        let image = #imageLiteral(resourceName: "lock")
+        let view = Utilities().inputContainerView(withImage: image,textField: passwordTextField)
         return view
+    }()
+    
+    private let emailTextField: UITextField = {
+        let tf = Utilities().textField(withPlaceholder: "Email")
+        return tf
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let tf = Utilities().textField(withPlaceholder: "Password")
+        tf.isSecureTextEntry = true
+        return tf
+    }()
+    
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(UIColor.systemGray, for: .normal)
+        button.backgroundColor = .amber
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
     }()
     
     //MARK: - Lifecycle
@@ -33,11 +56,25 @@ class LoginController: UIViewController {
     
     //MARK: - Selectors
     
+    @objc func handleLogin() {
+        print("DEBUG: Handle login...")
+    }
+    
     //MARK: - API
     
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .darkGray
+        
+        let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+        stack.axis = .vertical
+        stack.spacing = 20
+        stack.distribution = .fillEqually
+        
+        view.addSubview(stack)
+        stack.centerY(inView: view)
+        stack.anchor(left: view.leftAnchor, right: view.rightAnchor,
+                     paddingTop: 100 ,paddingLeft: 32, paddingRight: 32)
     }
 }
