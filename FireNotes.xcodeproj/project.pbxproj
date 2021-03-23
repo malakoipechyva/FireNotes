@@ -17,6 +17,7 @@
 		E3A6F56D2609EDC900998490 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F56C2609EDC900998490 /* NotesController.swift */; };
 		E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */; };
 		E3A6F5732609F19600998490 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5722609F19600998490 /* Extensions.swift */; };
+		E3A6F576260A2B4D00998490 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F575260A2B4D00998490 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E3A6F56C2609EDC900998490 /* NotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
 		E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNoteController.swift; sourceTree = "<group>"; };
 		E3A6F5722609F19600998490 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E3A6F575260A2B4D00998490 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E3A6F5722609F19600998490 /* Extensions.swift */,
+				E3A6F575260A2B4D00998490 /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */,
 				E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */,
 				E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */,
+				E3A6F576260A2B4D00998490 /* Utilities.swift in Sources */,
 				E3A6F5732609F19600998490 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,18 @@ class LoginController: UIViewController {
     
     //MARK: - Properties
     
+    private lazy var emailContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    private lazy var passwordContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
