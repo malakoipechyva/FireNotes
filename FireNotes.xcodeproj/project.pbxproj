@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5472609C8FF00998490 /* AppDelegate.swift */; };
 		E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5492609C8FF00998490 /* SceneDelegate.swift */; };
-		E3A6F54C2609C8FF00998490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F54B2609C8FF00998490 /* ViewController.swift */; };
 		E3A6F54F2609C90000998490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F54D2609C90000998490 /* Main.storyboard */; };
 		E3A6F5512609C90100998490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F5502609C90100998490 /* Assets.xcassets */; };
 		E3A6F5542609C90100998490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F5522609C90100998490 /* LaunchScreen.storyboard */; };
+		E3A6F5662609CFCE00998490 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5652609CFCE00998490 /* LoginController.swift */; };
+		E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5692609EC8300998490 /* RegistrationController.swift */; };
+		E3A6F56D2609EDC900998490 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F56C2609EDC900998490 /* NotesController.swift */; };
+		E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A6F5492609C8FF00998490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3A6F54B2609C8FF00998490 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3A6F54E2609C90000998490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3A6F5502609C90100998490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3A6F5532609C90100998490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3A6F5552609C90100998490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A6F5652609CFCE00998490 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E3A6F5692609EC8300998490 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E3A6F56C2609EDC900998490 /* NotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
+		E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNoteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		E3A6F5462609C8FF00998490 /* FireNotes */ = {
 			isa = PBXGroup;
 			children = (
+				E3A6F5632609CD9500998490 /* Model */,
+				E3A6F5622609CD9000998490 /* ViewModel */,
+				E3A6F5612609CD0300998490 /* Controller */,
+				E3A6F5602609CD0200998490 /* View */,
+				E3A6F55F2609CD0000998490 /* Api */,
+				E3A6F55E2609CCFF00998490 /* Utils */,
 				E3A6F5472609C8FF00998490 /* AppDelegate.swift */,
 				E3A6F5492609C8FF00998490 /* SceneDelegate.swift */,
-				E3A6F54B2609C8FF00998490 /* ViewController.swift */,
 				E3A6F54D2609C90000998490 /* Main.storyboard */,
 				E3A6F5502609C90100998490 /* Assets.xcassets */,
 				E3A6F5522609C90100998490 /* LaunchScreen.storyboard */,
 				E3A6F5552609C90100998490 /* Info.plist */,
 			);
 			path = FireNotes;
+			sourceTree = "<group>";
+		};
+		E3A6F55E2609CCFF00998490 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E3A6F55F2609CD0000998490 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		E3A6F5602609CD0200998490 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3A6F5612609CD0300998490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3A6F5652609CFCE00998490 /* LoginController.swift */,
+				E3A6F5692609EC8300998490 /* RegistrationController.swift */,
+				E3A6F56C2609EDC900998490 /* NotesController.swift */,
+				E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3A6F5622609CD9000998490 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3A6F5632609CD9500998490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A6F54C2609C8FF00998490 /* ViewController.swift in Sources */,
+				E3A6F56D2609EDC900998490 /* NotesController.swift in Sources */,
 				E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */,
+				E3A6F5662609CFCE00998490 /* LoginController.swift in Sources */,
+				E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */,
+				E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */,
 				E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
