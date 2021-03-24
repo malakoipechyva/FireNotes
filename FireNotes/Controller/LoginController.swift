@@ -74,7 +74,8 @@ class LoginController: UIViewController {
     }
     
     @objc func handleShowSignUp() {
-        print("DEBUG: Sign UP...")
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK: - API
