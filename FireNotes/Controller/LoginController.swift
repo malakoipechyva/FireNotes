@@ -10,6 +10,13 @@ import UIKit
 class LoginController: UIViewController {
     
     //MARK: - Properties
+    private let logoImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
+        iv.image = #imageLiteral(resourceName: "notes")
+        return iv
+    }()
     
     private lazy var emailContainerView: UIView = {
         let image = #imageLiteral(resourceName: "envelope")
@@ -68,6 +75,11 @@ class LoginController: UIViewController {
         view.backgroundColor = .darkGray
         navigationController?.navigationBar.isHidden = true
         
+        view.addSubview(logoImageView)
+        logoImageView.centerX(inView: view)
+        logoImageView.setDimensions(width: 83, height: 83)
+        logoImageView.anchor(top: view.topAnchor, paddingTop: 45)
+        
         let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stack.axis = .vertical
         stack.spacing = 20
@@ -76,6 +88,6 @@ class LoginController: UIViewController {
         view.addSubview(stack)
         stack.centerY(inView: view)
         stack.anchor(left: view.leftAnchor, right: view.rightAnchor,
-                     paddingTop: 100 ,paddingLeft: 32, paddingRight: 32)
+                     paddingLeft: 32, paddingRight: 32)
     }
 }
