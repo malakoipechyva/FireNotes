@@ -30,7 +30,7 @@ class RegistrationController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let tf = Utilities().textField(withPlaceholder: "Password")
-        tf.isSecureTextEntry = false
+        tf.isSecureTextEntry = true
         return tf
     }()
     

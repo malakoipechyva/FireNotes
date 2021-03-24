@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3173441260B7CE7009CFBE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */; };
 		E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5472609C8FF00998490 /* AppDelegate.swift */; };
 		E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5492609C8FF00998490 /* SceneDelegate.swift */; };
 		E3A6F54F2609C90000998490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F54D2609C90000998490 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A6F5492609C8FF00998490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				E3A6F5502609C90100998490 /* Assets.xcassets */,
 				E3A6F5522609C90100998490 /* LaunchScreen.storyboard */,
 				E3A6F5552609C90100998490 /* Info.plist */,
+				E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */,
 			);
 			path = FireNotes;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A6F5542609C90100998490 /* LaunchScreen.storyboard in Resources */,
+				E3173441260B7CE7009CFBE7 /* GoogleService-Info.plist in Resources */,
 				E3A6F5512609C90100998490 /* Assets.xcassets in Resources */,
 				E3A6F54F2609C90000998490 /* Main.storyboard in Resources */,
 			);
