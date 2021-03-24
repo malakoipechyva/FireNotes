@@ -37,7 +37,7 @@ class LoginController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(UIColor.systemGray, for: .normal)
+        button.setTitleColor(UIColor.darkGray, for: .normal)
         button.backgroundColor = .amber
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.layer.cornerRadius = 5
@@ -66,6 +66,7 @@ class LoginController: UIViewController {
     
     func configureUI() {
         view.backgroundColor = .darkGray
+        navigationController?.navigationBar.isHidden = true
         
         let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stack.axis = .vertical
