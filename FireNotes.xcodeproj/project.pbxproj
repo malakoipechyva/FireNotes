@@ -19,9 +19,13 @@
 		E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F56F2609EF4C00998490 /* UploadNoteController.swift */; };
 		E3A6F5732609F19600998490 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5722609F19600998490 /* Extensions.swift */; };
 		E3A6F576260A2B4D00998490 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F575260A2B4D00998490 /* Utilities.swift */; };
+		EA2854E6998F90B23133A7A5 /* Pods_FireNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787360E25451540EBBF514E7 /* Pods_FireNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		787360E25451540EBBF514E7 /* Pods_FireNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.debug.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.release.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.release.xcconfig"; sourceTree = "<group>"; };
 		E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2854E6998F90B23133A7A5 /* Pods_FireNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24B8B91F3B2FF8DB45552944 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				787360E25451540EBBF514E7 /* Pods_FireNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4305178160F312E9735C76A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */,
+				C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E3A6F53B2609C8FF00998490 = {
 			isa = PBXGroup;
 			children = (
 				E3A6F5462609C8FF00998490 /* FireNotes */,
 				E3A6F5452609C8FF00998490 /* Products */,
+				4305178160F312E9735C76A0 /* Pods */,
+				24B8B91F3B2FF8DB45552944 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3A6F5582609C90100998490 /* Build configuration list for PBXNativeTarget "FireNotes" */;
 			buildPhases = (
+				4613CE4C0D33FC40344F2B48 /* [CP] Check Pods Manifest.lock */,
 				E3A6F5402609C8FF00998490 /* Sources */,
 				E3A6F5412609C8FF00998490 /* Frameworks */,
 				E3A6F5422609C8FF00998490 /* Resources */,
+				006D6021AD65527A37699FBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +225,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		006D6021AD65527A37699FBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FireNotes/Pods-FireNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FireNotes/Pods-FireNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FireNotes/Pods-FireNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4613CE4C0D33FC40344F2B48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FireNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3A6F5402609C8FF00998490 /* Sources */ = {
@@ -355,6 +424,7 @@
 		};
 		E3A6F5592609C90100998490 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +444,7 @@
 		};
 		E3A6F55A2609C90100998490 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
