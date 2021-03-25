@@ -11,6 +11,8 @@ import Firebase
 class LoginController: UIViewController {
     
     //MARK: - Properties
+    private let controller = NotesController()
+    
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -80,8 +82,7 @@ class LoginController: UIViewController {
                 print("DEBUG: Error logging in with error: \(error.localizedDescription)")
                 return
             }
-            let controller = NotesController()
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.pushViewController(self.controller, animated: true)
         }
     }
     
@@ -96,7 +97,6 @@ class LoginController: UIViewController {
         if Auth.auth().currentUser == nil {
             configureUI()
         } else {
-            let controller = NotesController()
             navigationController?.pushViewController(controller, animated: true)
         }
     }
