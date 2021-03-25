@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationController: UIViewController {
     
@@ -22,6 +23,11 @@ class RegistrationController: UIViewController {
         let view = Utilities().inputContainerView(withImage: image,textField: passwordTextField)
         return view
     }()
+    private lazy var usernameContainerView: UIView = {
+        let image = #imageLiteral(resourceName: "Person Circle")
+        let view = Utilities().inputContainerView(withImage: image,textField: usernameTextField)
+        return view
+    }()
     
     private let emailTextField: UITextField = {
         let tf = Utilities().textField(withPlaceholder: "Email")
@@ -31,6 +37,11 @@ class RegistrationController: UIViewController {
     private let passwordTextField: UITextField = {
         let tf = Utilities().textField(withPlaceholder: "Password")
         tf.isSecureTextEntry = true
+        return tf
+    }()
+    
+    private let usernameTextField: UITextField = {
+        let tf = Utilities().textField(withPlaceholder: "Username")
         return tf
     }()
     
@@ -63,7 +74,15 @@ class RegistrationController: UIViewController {
     //MARK: - Selectors
     
     @objc func handleRegistration() {
-        print("DEBUG: Handle registrartion...")
+        guard let email = emailTextField.text?.lowercased() else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        
+        let credentials = AuthCredentials(email: email, password: password, username: username)
+        
+        AuthService.shared.registerUser(credentials: credentials) { (err, ref) in
+            print("User is successfully registred")
+        }
     }
     
     @objc func handleShowLoginScreen() {
@@ -77,7 +96,7 @@ class RegistrationController: UIViewController {
     func configureUI() {
         view.backgroundColor = .darkGray
         
-        let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, registrationButton])
+        let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, usernameContainerView, registrationButton])
         stack.axis = .vertical
         stack.spacing = 20
         stack.distribution = .fillEqually

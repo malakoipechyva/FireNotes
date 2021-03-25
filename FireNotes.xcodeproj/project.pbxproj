@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E3173441260B7CE7009CFBE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */; };
+		E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173451260C83FE009CFBE7 /* AuthService.swift */; };
+		E3173455260C8434009CFBE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173454260C8434009CFBE7 /* Constants.swift */; };
 		E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5472609C8FF00998490 /* AppDelegate.swift */; };
 		E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5492609C8FF00998490 /* SceneDelegate.swift */; };
 		E3A6F54F2609C90000998490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F54D2609C90000998490 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.debug.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.release.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.release.xcconfig"; sourceTree = "<group>"; };
 		E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3173451260C83FE009CFBE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		E3173454260C8434009CFBE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A6F5492609C8FF00998490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +72,6 @@
 				798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */,
 				C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +118,7 @@
 			children = (
 				E3A6F5722609F19600998490 /* Extensions.swift */,
 				E3A6F575260A2B4D00998490 /* Utilities.swift */,
+				E3173454260C8434009CFBE7 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -122,6 +126,7 @@
 		E3A6F55F2609CD0000998490 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E3173451260C83FE009CFBE7 /* AuthService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -276,7 +281,9 @@
 				E3A6F56D2609EDC900998490 /* NotesController.swift in Sources */,
 				E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */,
 				E3A6F5662609CFCE00998490 /* LoginController.swift in Sources */,
+				E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */,
 				E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */,
+				E3173455260C8434009CFBE7 /* Constants.swift in Sources */,
 				E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */,
 				E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */,
 				E3A6F576260A2B4D00998490 /* Utilities.swift in Sources */,
