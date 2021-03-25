@@ -65,13 +65,24 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logUserOut()
         authenticateUserAndConfigureUI()
     }
     
     //MARK: - Selectors
     
     @objc func handleLogin() {
-        print("DEBUG: Handle login...")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) { (result, err) in
+            if let error = err {
+                print("DEBUG: Error logging in with error: \(error.localizedDescription)")
+                return
+            }
+            let controller = NotesController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @objc func handleShowSignUp() {
@@ -87,6 +98,14 @@ class LoginController: UIViewController {
         } else {
             let controller = NotesController()
             navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    func logUserOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: Error logging out with error: \(error.localizedDescription)")
         }
     }
     

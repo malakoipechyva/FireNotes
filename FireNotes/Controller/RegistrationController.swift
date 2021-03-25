@@ -81,7 +81,8 @@ class RegistrationController: UIViewController {
         let credentials = AuthCredentials(email: email, password: password, username: username)
         
         AuthService.shared.registerUser(credentials: credentials) { (err, ref) in
-            print("User is successfully registred")
+            let controller = NotesController()
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
