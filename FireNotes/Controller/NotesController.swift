@@ -26,6 +26,7 @@ class NotesController: UITableViewController {
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .blue
+        navigationController?.navigationBar.isHidden = true
     }
 }

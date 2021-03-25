@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
     
@@ -64,7 +65,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
+        authenticateUserAndConfigureUI()
     }
     
     //MARK: - Selectors
@@ -79,6 +80,15 @@ class LoginController: UIViewController {
     }
     
     //MARK: - API
+    
+    func authenticateUserAndConfigureUI() {
+        if Auth.auth().currentUser == nil {
+            configureUI()
+        } else {
+            let controller = NotesController()
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
     
     //MARK: - Helpers
     
