@@ -26,6 +26,6 @@ class UploadNoteController: UIViewController {
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .lightGray
     }
 }
