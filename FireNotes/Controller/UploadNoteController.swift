@@ -21,11 +21,17 @@ class UploadNoteController: UIViewController {
     
     //MARK: - Selectors
     
+    @objc func handleCancel() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: - API
     
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
     }
 }

@@ -13,7 +13,7 @@ class NotesController: UITableViewController {
     
     private let addNoteButton: UIButton = {
         let button = UIButton(type: .system)
-        button.tintColor = .white
+        button.tintColor = .black
         button.setImage(UIImage(named: "Plus_Circle"), for: .normal)
         button.addTarget(self, action: #selector(addNoteButtonTapped), for: .touchUpInside)
         return button
@@ -41,7 +41,7 @@ class NotesController: UITableViewController {
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(addNoteButton)
