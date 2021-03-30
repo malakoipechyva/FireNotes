@@ -10,10 +10,13 @@ import Foundation
 struct Note {
     
     let uid: String
+    let noteID: String
     let text: String
     let timestamp: Date
     
-    init(dictionary: [String: Any]) {
+    init(noteID: String, dictionary: [String: Any]) {
+        self.noteID = noteID
+        
         self.uid = dictionary["uid"] as? String ?? ""
         self.text = dictionary["text"] as? String ?? ""
         

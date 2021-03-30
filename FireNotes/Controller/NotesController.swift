@@ -25,6 +25,7 @@ class NotesController: UITableViewController {
         super.viewDidLoad()
         
         configureUI()
+        fetchNotes()
     }
     
     //MARK: - Selectors
@@ -37,6 +38,12 @@ class NotesController: UITableViewController {
     }
     
     //MARK: - API
+    
+    func fetchNotes() {
+        NoteService.shared.fetchNotes { notes in
+            print(notes)
+        }
+    }
     
     //MARK: - Helpers
     
