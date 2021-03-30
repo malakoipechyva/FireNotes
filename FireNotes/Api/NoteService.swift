@@ -15,7 +15,7 @@ struct NoteService {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        var values = ["uid": uid,
+        let values = ["uid": uid,
                       "text": text,
                       "timestamp": Int(NSDate().timeIntervalSince1970)] as [String: Any]
         
