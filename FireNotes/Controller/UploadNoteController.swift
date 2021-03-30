@@ -36,6 +36,11 @@ class UploadNoteController: UIViewController {
     }
     
     @objc func addNoteButtonTapped() {
+        guard let noteText = uploadNoteTextView.text else { return }
+        NoteService.shared.uploadNote(text: noteText) { (err, ref) in
+            print("DEBUG: note successfully uploaded to firebase")
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     

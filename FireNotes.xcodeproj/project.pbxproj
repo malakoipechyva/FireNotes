@@ -11,6 +11,7 @@
 		E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173451260C83FE009CFBE7 /* AuthService.swift */; };
 		E3173455260C8434009CFBE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173454260C8434009CFBE7 /* Constants.swift */; };
 		E317346526135B28009CFBE7 /* UploadNoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317346426135B28009CFBE7 /* UploadNoteTextView.swift */; };
+		E31734682613633C009CFBE7 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31734672613633C009CFBE7 /* NoteService.swift */; };
 		E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5472609C8FF00998490 /* AppDelegate.swift */; };
 		E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5492609C8FF00998490 /* SceneDelegate.swift */; };
 		E3A6F54F2609C90000998490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F54D2609C90000998490 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		E3173451260C83FE009CFBE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E3173454260C8434009CFBE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E317346426135B28009CFBE7 /* UploadNoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNoteTextView.swift; sourceTree = "<group>"; };
+		E31734672613633C009CFBE7 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A6F5492609C8FF00998490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				E3A6F5632609CD9500998490 /* Model */,
+				E3A6F5602609CD0200998490 /* View */,
 				E3A6F5622609CD9000998490 /* ViewModel */,
 				E3A6F5612609CD0300998490 /* Controller */,
-				E3A6F5602609CD0200998490 /* View */,
 				E3A6F55F2609CD0000998490 /* Api */,
 				E3A6F55E2609CCFF00998490 /* Utils */,
 				E3A6F5472609C8FF00998490 /* AppDelegate.swift */,
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E3173451260C83FE009CFBE7 /* AuthService.swift */,
+				E31734672613633C009CFBE7 /* NoteService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */,
 				E3A6F576260A2B4D00998490 /* Utilities.swift in Sources */,
 				E3A6F5732609F19600998490 /* Extensions.swift in Sources */,
+				E31734682613633C009CFBE7 /* NoteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
