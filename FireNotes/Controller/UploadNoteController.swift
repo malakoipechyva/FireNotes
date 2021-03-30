@@ -10,12 +10,13 @@ import UIKit
 class UploadNoteController: UIViewController {
     
     //MARK: - Properties
+    
+    private let uploadNoteTextView = UploadNoteTextView()
+    
     private lazy var addNoteButton: UIButton = {
         let button = UIButton(type: .system)
-    
         button.tintColor = .systemBlue
         button.setImage(UIImage(named: "Checkmark"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
         button.addTarget(self, action: #selector(addNoteButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -47,5 +48,9 @@ class UploadNoteController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addNoteButton)
+        
+        view.addSubview(uploadNoteTextView)
+        uploadNoteTextView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                  paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
     }
 }

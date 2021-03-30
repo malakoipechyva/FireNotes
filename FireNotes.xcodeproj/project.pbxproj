@@ -10,6 +10,7 @@
 		E3173441260B7CE7009CFBE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */; };
 		E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173451260C83FE009CFBE7 /* AuthService.swift */; };
 		E3173455260C8434009CFBE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173454260C8434009CFBE7 /* Constants.swift */; };
+		E317346526135B28009CFBE7 /* UploadNoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317346426135B28009CFBE7 /* UploadNoteTextView.swift */; };
 		E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5472609C8FF00998490 /* AppDelegate.swift */; };
 		E3A6F54A2609C8FF00998490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6F5492609C8FF00998490 /* SceneDelegate.swift */; };
 		E3A6F54F2609C90000998490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A6F54D2609C90000998490 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3173451260C83FE009CFBE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E3173454260C8434009CFBE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E317346426135B28009CFBE7 /* UploadNoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNoteTextView.swift; sourceTree = "<group>"; };
 		E3A6F5442609C8FF00998490 /* FireNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5472609C8FF00998490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A6F5492609C8FF00998490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		E3A6F5602609CD0200998490 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E317346426135B28009CFBE7 /* UploadNoteTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				E3A6F5482609C8FF00998490 /* AppDelegate.swift in Sources */,
 				E3A6F5662609CFCE00998490 /* LoginController.swift in Sources */,
 				E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */,
+				E317346526135B28009CFBE7 /* UploadNoteTextView.swift in Sources */,
 				E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */,
 				E3173455260C8434009CFBE7 /* Constants.swift in Sources */,
 				E3A6F5702609EF4C00998490 /* UploadNoteController.swift in Sources */,
