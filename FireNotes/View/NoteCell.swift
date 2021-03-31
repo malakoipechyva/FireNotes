@@ -11,17 +11,21 @@ class NoteCell: UITableViewCell {
     
     //MARK: - Properties
     
-    private let noteLabel: UILabel = {
+    var note: Note? {
+        didSet {
+            configure()
+        }
+    }
+    
+    private let noteTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Note Title"
         return label
     }()
     
     private let timestampLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "00.00.00 march"
         return label
     }()
     
@@ -30,11 +34,14 @@ class NoteCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let stack = UIStackView(arrangedSubviews: [noteLabel, timestampLabel])
+        let stack = UIStackView(arrangedSubviews: [noteTitleLabel, timestampLabel])
+        stack.backgroundColor = .red
         stack.axis = .vertical
-        stack.spacing = 5
+        stack.spacing = 40
+        stack.distribution = .fillProportionally
         addSubview(stack)
-        stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 5)
+        stack.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor,
+                     paddingTop: 2, paddingLeft: 2, paddingBottom: 2, paddingRight: 2)
     }
     
     required init?(coder: NSCoder) {
@@ -43,8 +50,13 @@ class NoteCell: UITableViewCell {
     
     //MARK: - Selectors
     
-    //MARK: - API
-    
     //MARK: - Helpers
+    
+    func configure() {
+        guard let note = note else { return }
+        
+        textLabel?.text = note.text
+        timestampLabel.text = "\(note.timestamp)"
+    }
     
 }

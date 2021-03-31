@@ -13,7 +13,11 @@ class NotesController: UITableViewController {
     
     //MARK: - Properties
     
-    private var notes = [Note]()
+    private var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     private let addNoteButton: UIButton = {
         let button = UIButton(type: .system)
@@ -45,7 +49,7 @@ class NotesController: UITableViewController {
     
     func fetchNotes() {
         NoteService.shared.fetchNotes { notes in
-            print(notes)
+            self.notes = notes
         }
     }
     
@@ -58,8 +62,13 @@ class NotesController: UITableViewController {
         view.addSubview(addNoteButton)
         addNoteButton.centerX(inView: view)
         addNoteButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 20)
+        
+        tableView.register(NoteCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.rowHeight = 100
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension NotesController {
     
@@ -68,6 +77,9 @@ extension NotesController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! NoteCell
+        let note = notes[indexPath.row]
+        cell.note = note
+        return cell
     }
 }
