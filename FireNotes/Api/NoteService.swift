@@ -7,11 +7,13 @@
 
 import Firebase
 
+typealias DatabaseCompletion = ((Error?, DatabaseReference) -> Void)
+
 struct NoteService {
     
     static let shared = NoteService()
     
-    func uploadNote(text: String, completion: @escaping(Error?, DatabaseReference) -> Void) {
+    func uploadNote(text: String, completion: @escaping(DatabaseCompletion)) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let values = ["uid": uid,
@@ -19,6 +21,13 @@ struct NoteService {
                       "timestamp": Int(NSDate().timeIntervalSince1970)] as [String: Any]
         
         REF_NOTES.childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+    }
+    
+    func editNote(noteID: String, text: String, completion: @escaping(DatabaseCompletion)) {
+        let values = ["text": text,
+                      "timestamp": Int(NSDate().timeIntervalSince1970)] as [String: Any]
+        
+        REF_NOTES.child(noteID).updateChildValues(values)
     }
     
     func fetchNotes(completion: @escaping([Note]) -> Void) {

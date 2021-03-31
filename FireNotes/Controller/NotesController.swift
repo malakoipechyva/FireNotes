@@ -32,13 +32,13 @@ class NotesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchNotes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureUI()
+        fetchNotes()
     }
     
     //MARK: - Selectors

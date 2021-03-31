@@ -13,6 +13,8 @@ class DetailNoteController: UIViewController {
     
     private var note: Note
     
+    private let noteTextView = UITextView()
+    
     private lazy var addNoteButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .systemBlue
@@ -45,12 +47,14 @@ class DetailNoteController: UIViewController {
     }
     
     @objc func addNoteButtonTapped() {
-        guard let noteText = uploadNoteTextView.text else { return }
-        NoteService.shared.uploadNote(text: noteText) { (err, ref) in
-            print("DEBUG: note successfully uploaded to firebase")
+        guard let noteText = noteTextView.text else { return }
+        let noteID = note.noteID
+        
+        NoteService.shared.editNote(noteID: noteID, text: noteText) { (err, ref) in
+            print("DEBUG: note successfully edited and uploaded to firebase")
         }
         
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - API
@@ -62,7 +66,12 @@ class DetailNoteController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
+        navigationItem.leftBarButtonItem?.tintColor = .gray
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addNoteButton)
         
+        noteTextView.text = note.text
+        view.addSubview(noteTextView)
+        noteTextView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                  paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
     }
 }

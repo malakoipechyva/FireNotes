@@ -52,6 +52,7 @@ class UploadNoteController: UIViewController {
         view.backgroundColor = .white
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
+        navigationItem.leftBarButtonItem?.tintColor = .gray
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addNoteButton)
         
         view.addSubview(uploadNoteTextView)
