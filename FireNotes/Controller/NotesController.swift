@@ -32,8 +32,13 @@ class NotesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
         fetchNotes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureUI()
     }
     
     //MARK: - Selectors
@@ -69,7 +74,7 @@ class NotesController: UITableViewController {
     }
 }
 
-//MARK: - UITableViewDataSource
+//MARK: - UITableViewDataSource/Delegate
 
 extension NotesController {
     
@@ -82,5 +87,11 @@ extension NotesController {
         let note = notes[indexPath.row]
         cell.note = note
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let note = notes[indexPath.row]
+        let controller = DetailNoteController(note: note)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
