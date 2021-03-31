@@ -19,7 +19,18 @@ class NotesController: UITableViewController {
         }
     }
     
+    private var filteredNotes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    private var inSearchMode: BooleanLiteralType {
+        return searchController.isActive &&
+            !searchController.searchBar.text!.isEmpty
+    }
     
     private let addNoteButton: UIButton = {
         let button = UIButton(type: .system)
@@ -92,7 +103,7 @@ class NotesController: UITableViewController {
 extension NotesController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return notes.count
+        return inSearchMode ? filteredNotes.count : notes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,8 +125,8 @@ extension NotesController {
 extension NotesController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased() else { return }
-        
-        print("DEBUG: searched text is \(searchText)")
+
+        filteredNotes = notes.filter({ $0.text.contains(searchText)})
 
     }
 }
