@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E313709B26146D7500304BE6 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313709A26146D7500304BE6 /* NoteCell.swift */; };
+		E313709E2614918C00304BE6 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313709D2614918C00304BE6 /* NoteViewModel.swift */; };
 		E3173441260B7CE7009CFBE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */; };
 		E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173451260C83FE009CFBE7 /* AuthService.swift */; };
 		E3173455260C8434009CFBE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173454260C8434009CFBE7 /* Constants.swift */; };
@@ -33,6 +34,7 @@
 		798C5CE74B037A7470F03139 /* Pods-FireNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.debug.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		C8475B7A87646667824C2A28 /* Pods-FireNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireNotes.release.xcconfig"; path = "Target Support Files/Pods-FireNotes/Pods-FireNotes.release.xcconfig"; sourceTree = "<group>"; };
 		E313709A26146D7500304BE6 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		E313709D2614918C00304BE6 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		E3173440260B7CE7009CFBE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3173451260C83FE009CFBE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E3173454260C8434009CFBE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		E3A6F5622609CD9000998490 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E313709D2614918C00304BE6 /* NoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				E3A6F5662609CFCE00998490 /* LoginController.swift in Sources */,
 				E3173452260C83FE009CFBE7 /* AuthService.swift in Sources */,
 				E317346526135B28009CFBE7 /* UploadNoteTextView.swift in Sources */,
+				E313709E2614918C00304BE6 /* NoteViewModel.swift in Sources */,
 				E313709B26146D7500304BE6 /* NoteCell.swift in Sources */,
 				E317346C26136DE4009CFBE7 /* Note.swift in Sources */,
 				E3A6F56A2609EC8300998490 /* RegistrationController.swift in Sources */,

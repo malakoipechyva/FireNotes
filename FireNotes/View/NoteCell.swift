@@ -26,6 +26,7 @@ class NoteCell: UITableViewCell {
     private let timestampLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .lightGray
         return label
     }()
     
@@ -39,22 +40,21 @@ class NoteCell: UITableViewCell {
         
         addSubview(stack)
         stack.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor,
-                     paddingTop: 2, paddingLeft: 10, paddingBottom: 2, paddingRight: 2)
+                     paddingTop: 2, paddingLeft: 10, paddingBottom: 2, paddingRight: 10)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Selectors
-    
     //MARK: - Helpers
     
     func configure() {
         guard let note = note else { return }
+        let viewModel = NoteViewModel(note: note)
         
         noteTitleLabel.text = note.text
-        timestampLabel.text = "\(note.timestamp)"
+        timestampLabel.text = viewModel.noteTimestamp
     }
     
 }
