@@ -13,7 +13,11 @@ class DetailNoteController: UIViewController {
     
     private var note: Note
     
-    private let noteTextView = UITextView()
+    private let noteTextView: UITextView = {
+       let tv = UITextView()
+        tv.font = UIFont.systemFont(ofSize: 18)
+        return tv
+    }()
     
     private lazy var addNoteButton: UIButton = {
         let button = UIButton(type: .system)

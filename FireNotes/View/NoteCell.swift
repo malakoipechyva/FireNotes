@@ -19,13 +19,13 @@ class NoteCell: UITableViewCell {
     
     private let noteTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
     private let timestampLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label
     }()

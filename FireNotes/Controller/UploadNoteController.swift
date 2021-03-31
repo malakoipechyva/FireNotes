@@ -14,8 +14,7 @@ class UploadNoteController: UIViewController {
     private let uploadNoteTextView = UploadNoteTextView()
     
     private lazy var addNoteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.tintColor = .systemBlue
+        let button = UIButton()
         button.setImage(UIImage(named: "Checkmark"), for: .normal)
         button.addTarget(self, action: #selector(addNoteButtonTapped), for: .touchUpInside)
         return button

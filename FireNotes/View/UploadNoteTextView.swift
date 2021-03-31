@@ -25,7 +25,7 @@ class UploadNoteTextView: UITextView {
         super.init(frame: frame, textContainer: textContainer)
         
         backgroundColor = .white
-        font = UIFont.systemFont(ofSize: 16)
+        font = UIFont.systemFont(ofSize: 18)
         
         addSubview(placeholderLabel)
         placeholderLabel.anchor(top: topAnchor, left: leftAnchor,

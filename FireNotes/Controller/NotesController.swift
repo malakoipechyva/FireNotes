@@ -19,6 +19,8 @@ class NotesController: UITableViewController {
         }
     }
     
+    private let searchController = UISearchController(searchResultsController: nil)
+    
     private let addNoteButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
@@ -32,6 +34,7 @@ class NotesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +65,8 @@ class NotesController: UITableViewController {
     
     func configureUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
+        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.title = "Notes"
         
         view.addSubview(addNoteButton)
         addNoteButton.centerX(inView: view)
@@ -71,6 +75,15 @@ class NotesController: UITableViewController {
         tableView.register(NoteCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 60
         tableView.tableFooterView = UIView()
+    }
+    
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a notes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = false
     }
 }
 
@@ -93,5 +106,16 @@ extension NotesController {
         let note = notes[indexPath.row]
         let controller = DetailNoteController(note: note)
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+//MARK: - UISearchResultsUpdating
+
+extension NotesController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        print("DEBUG: searched text is \(searchText)")
+
     }
 }
