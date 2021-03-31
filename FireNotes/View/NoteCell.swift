@@ -35,13 +35,11 @@ class NoteCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let stack = UIStackView(arrangedSubviews: [noteTitleLabel, timestampLabel])
-        stack.backgroundColor = .red
         stack.axis = .vertical
-        stack.spacing = 40
-        stack.distribution = .fillProportionally
+        
         addSubview(stack)
         stack.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor,
-                     paddingTop: 2, paddingLeft: 2, paddingBottom: 2, paddingRight: 2)
+                     paddingTop: 2, paddingLeft: 10, paddingBottom: 2, paddingRight: 2)
     }
     
     required init?(coder: NSCoder) {
@@ -55,7 +53,7 @@ class NoteCell: UITableViewCell {
     func configure() {
         guard let note = note else { return }
         
-        textLabel?.text = note.text
+        noteTitleLabel.text = note.text
         timestampLabel.text = "\(note.timestamp)"
     }
     

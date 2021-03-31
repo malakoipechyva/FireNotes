@@ -64,7 +64,8 @@ class NotesController: UITableViewController {
         addNoteButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 20)
         
         tableView.register(NoteCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.rowHeight = 100
+        tableView.rowHeight = 60
+        tableView.tableFooterView = UIView()
     }
 }
 
