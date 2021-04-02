@@ -24,7 +24,7 @@ class RegistrationController: UIViewController {
         return view
     }()
     private lazy var usernameContainerView: UIView = {
-        let image = #imageLiteral(resourceName: "Person Circle")
+        let image = #imageLiteral(resourceName: "envelope")
         let view = Utilities().inputContainerView(withImage: image,textField: usernameTextField)
         return view
     }()

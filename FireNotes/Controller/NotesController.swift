@@ -40,6 +40,14 @@ class NotesController: UITableViewController {
         return button
     }()
     
+    private lazy var logOutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .amber
+        button.setImage(UIImage(named: "square_arrow_right"), for: .normal)
+        button.addTarget(self, action: #selector(logOutButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -50,6 +58,7 @@ class NotesController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
         
         configureUI()
         fetchNotes()
@@ -61,7 +70,12 @@ class NotesController: UITableViewController {
         let nav = UINavigationController(rootViewController: UploadNoteController())
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
-        
+    }
+    
+    @objc func logOutButtonTapped() {
+        let controller = LoginController()
+        AuthService.shared.logUserOut()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK: - API
@@ -79,6 +93,7 @@ class NotesController: UITableViewController {
         view.backgroundColor = .white
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.title = "Notes"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logOutButton)
         
         view.addSubview(addNoteButton)
         addNoteButton.centerX(inView: view)

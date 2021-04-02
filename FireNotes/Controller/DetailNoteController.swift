@@ -26,7 +26,7 @@ class DetailNoteController: UIViewController {
         return button
     }()
     
-    private lazy var deleteNoteButton: UIButton = {
+    private let deleteNoteButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .red
         button.setImage(UIImage(named: "trash"), for: .normal)
@@ -68,7 +68,7 @@ class DetailNoteController: UIViewController {
     }
     
     @objc func deleteNoteButtonTapped() {
-        let deleteAlert = UIAlertController(title: nil, message: "Note will be delete.", preferredStyle: UIAlertController.Style.alert)
+        let deleteAlert = UIAlertController(title: nil, message: "Note will be deleted.", preferredStyle: UIAlertController.Style.alert)
 
         deleteAlert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in
             NoteService.shared.deleteNote(noteID: self.note.noteID)

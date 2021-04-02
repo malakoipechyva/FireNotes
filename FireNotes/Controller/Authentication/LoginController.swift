@@ -67,7 +67,6 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        logUserOut()
         authenticateUserAndConfigureUI()
     }
     
@@ -98,14 +97,6 @@ class LoginController: UIViewController {
             configureUI()
         } else {
             navigationController?.pushViewController(controller, animated: true)
-        }
-    }
-    
-    func logUserOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch let error {
-            print("DEBUG: Error logging out with error: \(error.localizedDescription)")
         }
     }
     
