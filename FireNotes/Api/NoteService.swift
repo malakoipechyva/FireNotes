@@ -41,7 +41,7 @@ struct NoteService {
         }
     }
     
-    func deleteNote(noteID: String, completion: @escaping(DatabaseCompletion)) {
+    func deleteNote(noteID: String) {
         REF_NOTES.child(noteID).removeValue()
     }
 }

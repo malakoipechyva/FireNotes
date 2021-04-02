@@ -68,10 +68,16 @@ class DetailNoteController: UIViewController {
     }
     
     @objc func deleteNoteButtonTapped() {
-        NoteService.shared.deleteNote(noteID: note.noteID) { (err, ref) in
-            print("DEBUG: note successfully removed from firebase")
-        }
-        navigationController?.popViewController(animated: true)
+        let deleteAlert = UIAlertController(title: nil, message: "Note will be delete.", preferredStyle: UIAlertController.Style.alert)
+
+        deleteAlert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in
+            NoteService.shared.deleteNote(noteID: self.note.noteID)
+            self.navigationController?.popViewController(animated: true)
+        }))
+
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(deleteAlert, animated: true, completion: nil)
+        
     }
     
     //MARK: - API
