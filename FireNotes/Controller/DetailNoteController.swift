@@ -66,7 +66,7 @@ class DetailNoteController: UIViewController {
     //MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .amber
+        view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))

@@ -68,7 +68,8 @@ class NotesController: UITableViewController {
     
     func fetchNotes() {
         NoteService.shared.fetchNotes { notes in
-            self.notes = notes
+            let chronoNotes = notes.sorted {$0.timestamp > $1.timestamp}
+            self.notes = chronoNotes
         }
     }
     

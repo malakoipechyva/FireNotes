@@ -19,7 +19,7 @@ class NoteCell: UITableViewCell {
     
     private let noteTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
