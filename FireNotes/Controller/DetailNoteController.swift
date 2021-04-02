@@ -20,10 +20,17 @@ class DetailNoteController: UIViewController {
     }()
     
     private lazy var addNoteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.tintColor = .systemBlue
+        let button = UIButton()
         button.setImage(UIImage(named: "Checkmark"), for: .normal)
         button.addTarget(self, action: #selector(addNoteButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var deleteNoteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .red
+        button.setImage(UIImage(named: "trash"), for: .normal)
+        button.addTarget(self, action: #selector(deleteNoteButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -57,7 +64,13 @@ class DetailNoteController: UIViewController {
         NoteService.shared.editNote(noteID: noteID, text: noteText) { (err, ref) in
             print("DEBUG: note successfully edited and uploaded to firebase")
         }
-        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func deleteNoteButtonTapped() {
+        NoteService.shared.deleteNote(noteID: note.noteID) { (err, ref) in
+            print("DEBUG: note successfully removed from firebase")
+        }
         navigationController?.popViewController(animated: true)
     }
     
@@ -77,5 +90,9 @@ class DetailNoteController: UIViewController {
         view.addSubview(noteTextView)
         noteTextView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
                                   paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
+        
+        view.addSubview(deleteNoteButton)
+        deleteNoteButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                paddingBottom: 20, paddingRight: 30)
     }
 }

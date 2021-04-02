@@ -15,7 +15,6 @@ struct NoteService {
     
     func uploadNote(text: String, completion: @escaping(DatabaseCompletion)) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        
         let values = ["uid": uid,
                       "text": text,
                       "timestamp": Int(NSDate().timeIntervalSince1970)] as [String: Any]
@@ -40,5 +39,9 @@ struct NoteService {
             notes.append(note)
             completion(notes)
         }
+    }
+    
+    func deleteNote(noteID: String, completion: @escaping(DatabaseCompletion)) {
+        REF_NOTES.child(noteID).removeValue()
     }
 }
