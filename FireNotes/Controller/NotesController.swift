@@ -73,9 +73,16 @@ class NotesController: UITableViewController {
     }
     
     @objc func logOutButtonTapped() {
-        let controller = LoginController()
-        AuthService.shared.logUserOut()
-        navigationController?.pushViewController(controller, animated: true)
+        let logOutAlert = UIAlertController(title: nil, message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
+
+        logOutAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let controller = LoginController()
+            AuthService.shared.logUserOut()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }))
+
+        logOutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(logOutAlert, animated: true, completion: nil)
     }
     
     //MARK: - API
