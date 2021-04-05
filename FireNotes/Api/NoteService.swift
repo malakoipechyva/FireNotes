@@ -32,15 +32,19 @@ struct NoteService {
         REF_NOTES.child(noteID).updateChildValues(values)
     }
     
-    func fetchNotes(completion: @escaping([Note]) -> Void) {
+    func fetchUserNotes(forUser uid: String, completion: @escaping([Note]) -> Void) {
         var notes = [Note]()
         
-        REF_NOTES.observe(.childAdded) { snapshot in
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
+        REF_USER_NOTES.child(uid).observe(.childAdded) { snapshot in
             let noteID = snapshot.key
-            let note = Note(noteID: noteID, dictionary: dictionary)
-            notes.append(note)
-            completion(notes)
+            
+            REF_NOTES.child(noteID).observeSingleEvent(of: .value) { snapshot in
+                guard let dictionary = snapshot.value as? [String: Any] else { return }
+                let noteID = snapshot.key
+                let note = Note(noteID: noteID, dictionary: dictionary)
+                notes.append(note)
+                completion(notes)
+            }
         }
     }
     

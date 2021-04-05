@@ -12,6 +12,7 @@ private let reuseIdentifier = "NoteCell"
 class NotesController: UITableViewController {
     
     //MARK: - Properties
+    var uid: String
     
     private var notes = [Note]() {
         didSet {
@@ -49,6 +50,14 @@ class NotesController: UITableViewController {
     }()
     
     //MARK: - Lifecycle
+    init(uid: String) {
+        self.uid = uid
+        super.init(style: .plain)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +67,7 @@ class NotesController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.navigationBar.isHidden = false
         
         configureUI()
@@ -88,7 +98,7 @@ class NotesController: UITableViewController {
     //MARK: - API
     
     func fetchNotes() {
-        NoteService.shared.fetchNotes { notes in
+        NoteService.shared.fetchUserNotes(forUser: uid) { notes in
             let chronoNotes = notes.sorted {$0.timestamp > $1.timestamp}
             self.notes = chronoNotes
         }
