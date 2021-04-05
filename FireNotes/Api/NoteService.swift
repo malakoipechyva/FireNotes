@@ -19,7 +19,10 @@ struct NoteService {
                       "text": text,
                       "timestamp": Int(NSDate().timeIntervalSince1970)] as [String: Any]
         
-        REF_NOTES.childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+        REF_NOTES.childByAutoId().updateChildValues(values) { (err, ref) in
+            guard let noteID = ref.key else { return }
+            REF_USER_NOTES.child(uid).updateChildValues([noteID: 1], withCompletionBlock: completion)
+        }
     }
     
     func editNote(noteID: String, text: String, completion: @escaping(DatabaseCompletion)) {
