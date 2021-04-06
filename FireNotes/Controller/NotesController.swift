@@ -28,7 +28,7 @@ class NotesController: UITableViewController {
     
     private let searchController = UISearchController(searchResultsController: nil)
     
-    private var inSearchMode: BooleanLiteralType {
+    private var inSearchMode: Bool {
         return searchController.isActive &&
             !searchController.searchBar.text!.isEmpty
     }
@@ -62,16 +62,15 @@ class NotesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
         configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = false
-        
-        configureUI()
         fetchNotes()
+        navigationController?.navigationBar.isHidden = false
     }
     
     //MARK: - Selectors
@@ -111,6 +110,8 @@ class NotesController: UITableViewController {
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.title = "Notes"
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logOutButton)
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         
         view.addSubview(addNoteButton)
         addNoteButton.centerX(inView: view)
@@ -118,6 +119,7 @@ class NotesController: UITableViewController {
         
         tableView.register(NoteCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 60
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
     }
     
@@ -126,6 +128,7 @@ class NotesController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        
         navigationItem.searchController = searchController
         definesPresentationContext = false
     }

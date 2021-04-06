@@ -43,8 +43,6 @@ class UploadNoteController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: - API
-    
     //MARK: - Helpers
     
     func configureUI() {

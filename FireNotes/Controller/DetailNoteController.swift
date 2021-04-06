@@ -79,9 +79,7 @@ class DetailNoteController: UIViewController {
         present(deleteAlert, animated: true, completion: nil)
         
     }
-    
-    //MARK: - API
-    
+  
     //MARK: - Helpers
     
     func configureUI() {

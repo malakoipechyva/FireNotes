@@ -90,9 +90,7 @@ class RegistrationController: UIViewController {
     @objc func handleShowLoginScreen() {
         navigationController?.popViewController(animated: true)
     }
-    
-    //MARK: - API
-    
+
     //MARK: - Helpers
     
     func configureUI() {
