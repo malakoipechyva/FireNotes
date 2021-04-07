@@ -40,7 +40,7 @@ class NoteCell: UITableViewCell {
         
         addSubview(stack)
         stack.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor,
-                     paddingTop: 2, paddingLeft: 10, paddingBottom: 2, paddingRight: 10)
+                     paddingTop: 2, paddingLeft: 15, paddingBottom: 2, paddingRight: 15)
     }
     
     required init?(coder: NSCoder) {

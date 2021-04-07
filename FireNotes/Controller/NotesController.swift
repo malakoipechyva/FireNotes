@@ -69,8 +69,8 @@ class NotesController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchNotes()
         navigationController?.navigationBar.isHidden = false
+        fetchNotes()
     }
     
     //MARK: - Selectors
