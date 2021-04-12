@@ -8,6 +8,9 @@ Technologies:
 - Firebase Realtime Database
 - MVVM
 
+## To-Do
+- [ ] Refactor to fix architectural issues
+
 ## Screenshots
 #### Authentication
 <img src="https://user-images.githubusercontent.com/52073275/113876949-e7003e80-97c0-11eb-861d-718058807d3b.png" width="250" height="450"><img src="https://user-images.githubusercontent.com/52073275/113876970-ec5d8900-97c0-11eb-9928-713a622f63e3.png" width="250" height="450">
