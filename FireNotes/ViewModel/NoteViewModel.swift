@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteViewModel {
+class NoteViewModel {
     
     //MARK: - Properties
     
